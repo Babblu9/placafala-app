@@ -1,0 +1,112 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 88%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 0 70% 54%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 88%;
+    
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 66%;
+    
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 70% 52%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 28%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-placafala-black text-placafala-lightgray antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-placafala-darkgray/70 backdrop-blur-md border border-white/10 shadow-lg;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .transition-app {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .hover-scale {
+    @apply hover:scale-[1.02] transition-transform duration-200;
+  }
+  
+  .hover-glow {
+    @apply hover:shadow-[0_0_10px_rgba(255,255,255,0.1)] transition-shadow duration-300;
+  }
+}
+
+#root {
+  @apply mx-auto w-full px-0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-placafala-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-placafala-gray rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted;
+}
+
+/* Page transition animations */
+.page-enter {
+  @apply opacity-0;
+}
+
+.page-enter-active {
+  @apply opacity-100 transition-opacity duration-300;
+}
+
+.page-exit {
+  @apply opacity-100;
+}
+
+.page-exit-active {
+  @apply opacity-0 transition-opacity duration-300;
+}
